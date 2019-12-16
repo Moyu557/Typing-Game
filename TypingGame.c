@@ -6,7 +6,7 @@
 #include <time.h>
 
 
-#define N 40
+#define N 40	//显示的字母数
 
 void tips(void);
 void print_char(char *);
@@ -18,12 +18,15 @@ int main(void)
 
 	while (1)
 	{
+		//开始游戏提示
 		tips();
 
+		//随机字母显示
 		char a[N + 1];
 		print_char(a);
 		printf("%s\n", a);
 
+		//时间计数和正确率显示
 		time_s(a);
 
 		printf("请输入接下来的操作(R重新开始，ESC退出)：");
@@ -48,7 +51,7 @@ int main(void)
 	return 0;
 }
 
-
+//开始游戏提示
 void tips(void)
 {
 	puts("******************任意键开始游戏，R重新开始游戏，ESC退出**********************");
@@ -61,7 +64,7 @@ void tips(void)
 
 }
 
-
+//产生随机字母
 void print_char(char * a)
 {
 	int i;
@@ -72,7 +75,7 @@ void print_char(char * a)
 	a[i] = '\0';
 }
 
-
+//时间计数和正确率计算
 void time_s(char *a)
 {
 	unsigned time_star, time_end;
